@@ -195,5 +195,145 @@ def Files_in_folder():
       i += 1  
    the_listbox.insert(END, "")  
    the_listbox.insert(END, "Total Files: " + str(len(files_folder)))  
+   
+   # main function  
+
+if __name__ == "__main__":  
+   # creating an object of the Tk() class  
+   win_root = Tk()  
+   # setting the title of the main window  
+   win_root.title("SFP-File Explorer")  
+   # set the size and position of the window  
+   win_root.geometry("800x500+650+250")  
+   # disabling the resizable option  
+   win_root.resizable(0, 0)  
+   # setting the background color to #D8E9E6  
+   win_root.configure(bg = "#D8E9E6")  
+  
+   # creating the frames using the Frame() widget  
+   header_frame = Frame(win_root, bg = "#88AB8E")  
+   buttons_frame = Frame(win_root, bg = "#88AB8E")  
+  
+   # using the pack() method to place the frames in the window  
+   header_frame.pack(fill = "both")  
+   buttons_frame.pack(expand = TRUE, fill = "both")  
+  
+   # creating a label using the Label() widget  
+   header_label = Label(  
+      header_frame,  
+      text = "File Explorer",  
+      font = ("Arial", "20"),  
+      bg = "#AFC8AD",  
+      fg = "#1A3C37"  
+      )  
+  
+   # using the pack() method to place the label in the window  
+   header_label.pack(expand = TRUE, fill = "both", pady = 12)  
+
+
+  
+   # delete folder button  
+   delete_folder_button = Button(  
+      buttons_frame,  
+      text = "Delete a Folder",  
+      font = ("verdana", "10"),  
+      width = 18,  
+      bg = "#EEE7DA",  
+      fg = "#000000",  
+      relief = GROOVE,  
+      activebackground = "#286F63",  
+      activeforeground = "#D0FEF7",  
+      command = Folder_delete  
+      )  
+  
+   # move folder button  
+   move_folder_button = Button(  
+      buttons_frame,  
+      text = "Move Folder ",  
+      font = ("verdana", "10"),  
+      width = 18,  
+      bg = "#EEE7DA",  
+      fg = "#000000",  
+      relief = GROOVE,  
+      activebackground = "#286F63",  
+      activeforeground = "#D0FEF7",  
+      command = folder_move  
+      )  
+  
+   # list all files button  
+   list_button = Button(  
+      buttons_frame,  
+      text = "File Folder",  
+      font = ("verdana", "10"),  
+      width = 18,  
+      bg = "#EEE7DA",  
+      fg = "#000000",  
+      relief = GROOVE,  
+      activebackground = "#286F63",  
+      activeforeground = "#D0FEF7",  
+      command = Files_in_folder  
+      )  
+
+
+   # copy button  
+   copy_button = Button(  
+      buttons_frame,  
+      text = "Copy File",  
+      font = ("verdana", "10"),  
+      width = 18,  
+      bg = "#EEE7DA",  
+      fg = "#000000",  
+      relief = GROOVE,  
+      activebackground = "#286F63",  
+      activeforeground = "#D0FEF7",  
+      command = copyFile  
+      )  
+  
+   # delete button  
+   delete_button = Button(  
+      buttons_frame,  
+      text = "Delete File",  
+      font = ("verdana", "10"),  
+      width = 18,  
+      bg = "#EEE7DA",  
+      fg = "#000000",  
+      relief = GROOVE,  
+      activebackground = "#286F63",  
+      activeforeground = "#D0FEF7",  
+      command = deleteFile  
+      )  
+  
+   # rename button  
+   rename_button = Button(  
+      buttons_frame,  
+      text = "RenameFile",  
+      font = ("Arial", "10"),  
+      width = 18,  
+      bg = "#EEE7DA",  
+      fg = "#000000",  
+      relief = GROOVE,  
+      activebackground = "#286F63",  
+      activeforeground = "#D0FEF7",  
+      command = renameFile  
+      )  
+  
+
+   # using the pack() method to place the buttons in the window  
+   
+   
+ 
+   copy_button.pack(pady = 8)  
+   delete_button.pack(pady = 8)  
+   rename_button.pack(pady = 8)  
+   move_folder_button.pack(pady = 8)  
+   delete_folder_button.pack(pady = 8)  
+   list_button.pack(pady = 8)  
+    
+  
+   # creating an object of the StringVar() class  
+   enteredFileName = StringVar()  
+   
+win_root.mainloop() 
+
   
 
